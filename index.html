@@ -936,13 +936,13 @@
     function smoothstep(t) { return t * t * (3 - 2 * t); }
     function lerp(a, b, t) { return a + (b - a) * t; }
 
-    const LOGO_Y_RATIO = 0.30; /* logo começa a 30% da altura do intro */
+    function logoYRatio() { return isMobile() ? 0.18 : 0.30; }
 
     function initMorph() {
       morphLogo.style.height    = H_START + 'px';
       morphLogo.style.width     = 'auto';
       morphLogo.style.left      = '50%';
-      morphLogo.style.top       = (introSec.offsetHeight * LOGO_Y_RATIO) + 'px';
+      morphLogo.style.top       = (introSec.offsetHeight * logoYRatio()) + 'px';
       morphLogo.style.transform = 'translate(-50%, -50%)';
     }
 
@@ -964,7 +964,7 @@
       const txCX = r.left + r.width  / 2;
       const txCY = r.top  + r.height / 2;
       const sxCX = window.innerWidth  / 2;
-      const sxCY = introSec.offsetHeight * LOGO_Y_RATIO;
+      const sxCY = introSec.offsetHeight * logoYRatio();
 
       const cx = lerp(sxCX, txCX, progress);
       const cy = lerp(sxCY, txCY, progress);
