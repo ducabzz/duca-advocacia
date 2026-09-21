@@ -26,6 +26,9 @@
       scroll-snap-align: start;
       scroll-snap-stop: always;
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     a { text-decoration: none; color: inherit; }
     img { display: block; max-width: 100%; }
@@ -45,6 +48,7 @@
       height: 100vh;
       position: relative;
       overflow: hidden;
+      display: block;
     }
     #intro::after {
       content: '';
@@ -274,7 +278,7 @@
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; }
 
     /* ─── DOR ─── */
-    #dor { background: #141414; padding: 0; }
+    #dor { background: #141414; padding: 0; display: block; }
     .dor-pad { padding: 110px 5%; }
     #dor h2 { color: #fff; }
     .dor-body p {
@@ -557,7 +561,7 @@
     }
 
     /* ─── CTA FINAL ─── */
-    #cta-final { position: relative; overflow: hidden; padding: 0; }
+    #cta-final { position: relative; overflow: hidden; padding: 0; display: block; }
     #cta-final::after {
       content: '';
       position: absolute; inset: 0;
