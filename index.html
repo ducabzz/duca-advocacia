@@ -462,30 +462,60 @@
     }
     .areas-list {
       margin-top: 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--border);
       border: 1px solid var(--border);
     }
-    .area-tag {
-      background: #fff;
-      padding: 1.2rem 1.6rem;
+    .area-item { border-bottom: 1px solid var(--border); }
+    .area-item:last-child { border-bottom: none; }
+    .area-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      font-family: 'Montserrat', sans-serif;
       font-size: .72rem;
       font-weight: 600;
       letter-spacing: .1em;
       text-transform: uppercase;
       color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: .7rem;
+      text-align: left;
+      transition: background .18s;
     }
-    .area-tag::before {
-      content: '';
-      width: 4px; height: 4px;
-      background: var(--ink);
-      border-radius: 50%;
+    .area-btn:hover { background: var(--bg); }
+    .area-icon {
       flex-shrink: 0;
+      width: 20px; height: 20px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .7rem;
+      font-weight: 300;
+      color: var(--mid);
+      transition: all .2s;
+    }
+    .area-item.open .area-icon {
+      background: var(--ink);
+      border-color: var(--ink);
+      color: #fff;
+      transform: rotate(45deg);
+    }
+    .area-body {
+      font-size: .83rem;
+      color: #666;
+      line-height: 1.85;
+      font-weight: 300;
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 1.4rem;
+      transition: max-height .32s var(--ease), padding .32s;
+    }
+    .area-item.open .area-body {
+      max-height: 200px;
+      padding: 0 1.4rem 1.2rem;
     }
     .sobre-stat {
       border-top: 1px solid var(--border);
@@ -871,12 +901,30 @@
       <div class="sobre-right">
         <p class="s-label">Áreas de atuação</p>
         <div class="areas-list">
-          <div class="area-tag">Tributário</div>
-          <div class="area-tag">Empresarial</div>
-          <div class="area-tag">Trabalhista</div>
-          <div class="area-tag">Startups</div>
-          <div class="area-tag">Licitações</div>
-          <div class="area-tag">Contratos</div>
+          <div class="area-item">
+            <button class="area-btn">Tributário<span class="area-icon">+</span></button>
+            <div class="area-body">Recuperação de créditos, planejamento tributário, defesa em autuações fiscais e redução legal da carga de impostos para empresas de todos os portes.</div>
+          </div>
+          <div class="area-item">
+            <button class="area-btn">Empresarial<span class="area-icon">+</span></button>
+            <div class="area-body">Constituição e alteração societária, contratos empresariais, proteção do patrimônio e estruturação jurídica do negócio para crescimento seguro.</div>
+          </div>
+          <div class="area-item">
+            <button class="area-btn">Trabalhista<span class="area-icon">+</span></button>
+            <div class="area-body">Prevenção de passivos, gestão de admissões e demissões, defesa em reclamações trabalhistas e compliance para evitar autuações.</div>
+          </div>
+          <div class="area-item">
+            <button class="area-btn">Startups<span class="area-icon">+</span></button>
+            <div class="area-body">Estruturação jurídica para startups, acordos de sócios, captação de investimento e proteção de propriedade intelectual desde o início.</div>
+          </div>
+          <div class="area-item">
+            <button class="area-btn">Licitações<span class="area-icon">+</span></button>
+            <div class="area-body">Habilitação, impugnações, recursos e acompanhamento completo em processos licitatórios para empresas que contratam com o poder público.</div>
+          </div>
+          <div class="area-item">
+            <button class="area-btn">Contratos<span class="area-icon">+</span></button>
+            <div class="area-body">Elaboração, revisão e negociação de contratos empresariais com foco em segurança jurídica, clareza nas obrigações e prevenção de conflitos.</div>
+          </div>
         </div>
         <div class="hr" style="margin-top:2.5rem;"></div>
         <p style="font-size:.85rem;color:#888;line-height:1.9;font-weight:300;">
@@ -989,6 +1037,16 @@
     }
 
     updateMorph();
+
+    /* ── áreas accordion ── */
+    document.querySelectorAll('.area-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.area-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.area-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
 
     /* ── faq ── */
     document.querySelectorAll('.faq-q').forEach(btn => {
