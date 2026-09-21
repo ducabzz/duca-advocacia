@@ -284,11 +284,11 @@
     }
 
     /* ─── VIRADA ─── */
-    #virada { background: #111; border-top: 1px solid rgba(255,255,255,.06); }
-    #virada h2 { color: #fff; }
+    #virada { background: #fff; border-top: 1px solid var(--border); }
+    #virada h2 { color: var(--ink); }
     .virada-body p {
       font-size: .92rem;
-      color: rgba(255,255,255,.55);
+      color: var(--mid);
       line-height: 2;
       font-weight: 300;
     }
@@ -296,7 +296,7 @@
     .virada-body .btn { margin-top: 2rem; }
 
     /* ─── INCLUSO ─── */
-    #incluso { background: var(--grafite); }
+    #incluso { background: var(--bg); border-top: 1px solid var(--border); }
     .incluso-top {
       display: flex;
       align-items: flex-end;
@@ -305,25 +305,25 @@
       flex-wrap: wrap;
       gap: 1.5rem;
     }
-    #incluso h2 { color: #fff; }
+    #incluso h2 { color: var(--ink); }
     .i-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.06);
+      background: var(--border);
+      border: 1px solid var(--border);
     }
     .i-card {
-      background: var(--grafite);
+      background: #fff;
       padding: 2.2rem 2rem;
       transition: background .2s;
     }
-    .i-card:hover { background: #222; }
+    .i-card:hover { background: #f2f2f2; }
     .i-n {
       font-family: 'Cormorant SC', serif;
       font-size: 2rem;
       font-weight: 300;
-      color: rgba(255,255,255,.1);
+      color: rgba(0,0,0,.07);
       line-height: 1;
       margin-bottom: 1.2rem;
     }
@@ -333,16 +333,16 @@
       font-weight: 600;
       letter-spacing: .08em;
       text-transform: uppercase;
-      color: rgba(255,255,255,.8);
+      color: var(--ink);
       margin-bottom: .5rem;
     }
     .i-card p {
       font-size: .84rem;
-      color: rgba(255,255,255,.48);
+      color: var(--mid);
       line-height: 1.75;
       font-weight: 300;
     }
-    .i-full { grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.05); }
+    .i-full { grid-column: 1 / -1; border-top: 1px solid var(--border); }
     .i-cta { text-align: center; margin-top: 3rem; }
 
     /* ─── COMO ─── */
@@ -749,14 +749,14 @@
   <section id="virada" class="s">
     <div class="inner two">
       <div>
-        <p class="s-label lt">A solução</p>
+        <p class="s-label">A solução</p>
         <h2>Assessoria jurídica mensal: alguém cuidando disso enquanto você cuida da empresa</h2>
-        <div class="hr dk"></div>
+        <div class="hr"></div>
       </div>
       <div class="virada-body">
         <p>A maioria dos empresários só chama advogado quando o problema já aconteceu. Isso é apagar incêndio, não prevenção.</p>
         <p>Com a assessoria mensal essa lógica muda: você tem um time jurídico acompanhando a empresa o mês inteiro, revisando contrato antes de assinar, corrigindo risco antes de virar passivo, e disponível quando a dúvida aparece. Não só quando o processo chega.</p>
-        <a href="#incluso" class="btn btn-gl">Ver o que está incluso</a>
+        <a href="#incluso" class="btn btn-dark">Ver o que está incluso</a>
       </div>
     </div>
   </section>
@@ -766,8 +766,8 @@
     <div class="inner">
       <div class="incluso-top">
         <div>
-          <p class="s-label lt">Assessoria mensal</p>
-          <h2 style="color:#fff;">O que sua empresa tem todo mês</h2>
+          <p class="s-label">Assessoria mensal</p>
+          <h2>O que sua empresa tem todo mês</h2>
         </div>
       </div>
       <div class="i-grid">
@@ -813,7 +813,7 @@
         </div>
       </div>
       <div class="i-cta">
-        <a href="https://wa.me/5577991268249?text=Ol%C3%A1,%20tudo%20bem?%20Preciso%20de%20assessoria%20jur%C3%ADdica%20para%20a%20minha%20empresa." target="_blank" class="btn btn-gl">Quero esse suporte na minha empresa</a>
+        <a href="https://wa.me/5577991268249?text=Ol%C3%A1,%20tudo%20bem?%20Preciso%20de%20assessoria%20jur%C3%ADdica%20para%20a%20minha%20empresa." target="_blank" class="btn btn-dark">Quero esse suporte na minha empresa</a>
       </div>
     </div>
   </section>
