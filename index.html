@@ -113,9 +113,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
       text-align: center;
-      padding: 0 6% 8vh;
+      padding: 0 6% 12vh;
     }
     .hero-pre {
       font-size: .62rem;
@@ -703,7 +703,7 @@
       </div>
       <div class="virada-body">
         <p>A maioria dos empresários só chama advogado quando o problema já aconteceu. Isso é apagar incêndio, não prevenção.</p>
-        <p>Com a assessoria mensal essa lógica muda: você tem um time jurídico acompanhando a empresa o mês inteiro, revisando contrato antes de assinar, corrigindo risco antes de virar passivo, e disponível quando a dúvida aparece — não só quando o processo chega.</p>
+        <p>Com a assessoria mensal essa lógica muda: você tem um time jurídico acompanhando a empresa o mês inteiro, revisando contrato antes de assinar, corrigindo risco antes de virar passivo, e disponível quando a dúvida aparece. Não só quando o processo chega.</p>
         <a href="#incluso" class="btn btn-gd">Ver o que está incluso</a>
       </div>
     </div>
@@ -722,7 +722,7 @@
         <div class="i-card">
           <div class="i-n">01</div>
           <b>Contratos</b>
-          <p>Revisão e elaboração de contratos — fornecedor, cliente, prestador PJ e sócio</p>
+          <p>Revisão e elaboração de contratos com fornecedor, cliente, prestador PJ e sócio</p>
         </div>
         <div class="i-card">
           <div class="i-n">02</div>
@@ -737,7 +737,7 @@
         <div class="i-card">
           <div class="i-n">04</div>
           <b>Análise de Risco</b>
-          <p>Avaliação jurídica antes de decisões importantes — parceria, expansão, contratação</p>
+          <p>Avaliação jurídica antes de decisões importantes: parceria, expansão, contratação</p>
         </div>
         <div class="i-card">
           <div class="i-n">05</div>
@@ -749,8 +749,13 @@
           <b>Teses Tributárias</b>
           <p>Análise de oportunidades tributárias aplicáveis ao modelo do seu negócio</p>
         </div>
-        <div class="i-card i-full">
+        <div class="i-card">
           <div class="i-n">07</div>
+          <b>Licitações</b>
+          <p>Orientação e acompanhamento em processos licitatórios para empresas que contratam com o poder público</p>
+        </div>
+        <div class="i-card">
+          <div class="i-n">08</div>
           <b>Relatório Mensal</b>
           <p>Resumo do que foi feito, o que está em andamento e o que merece atenção no próximo mês</p>
         </div>
@@ -820,7 +825,19 @@
         </li>
         <li class="faq-item">
           <button class="faq-q">Como funciona o atendimento no dia a dia?<span class="faq-ico">+</span></button>
-          <div class="faq-a">Você tem acesso direto por WhatsApp para tirar dúvidas, enviar documentos para análise e acionar o escritório quando precisar — sem precisar agendar toda vez ou esperar dias por uma resposta.</div>
+          <div class="faq-a">Você tem acesso direto por WhatsApp para tirar dúvidas, enviar documentos para análise e acionar o escritório quando precisar. Sem precisar agendar toda vez ou esperar dias por uma resposta.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q">Preciso estar em Salvador ou na Bahia?<span class="faq-ico">+</span></button>
+          <div class="faq-a">Não. O atendimento é 100% remoto e atendemos empresários em todo o Brasil. Contratos são assinados digitalmente e toda a comunicação acontece de forma prática e ágil.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q">A assessoria substitui um advogado interno?<span class="faq-ico">+</span></button>
+          <div class="faq-a">Para a maioria das empresas de pequeno e médio porte, sim. Você tem toda a cobertura jurídica necessária por uma fração do custo de um advogado CLT. E com mais especialização, já que você acessa um escritório focado em direito empresarial.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-q">Posso cancelar quando quiser?<span class="faq-ico">+</span></button>
+          <div class="faq-a">Sim. A assessoria é um serviço contínuo, mas não existe fidelidade forçada. O objetivo é que você fique porque faz sentido para o negócio, não porque está preso em contrato.</div>
         </li>
       </ul>
     </div>
@@ -834,13 +851,9 @@
         <p class="nome">Dr. Eduardo Duca</p>
         <p class="oab">OAB/BA 90481 · Atuação Nacional</p>
         <p>Advogado com atuação especializada em direito empresarial, tributário e trabalhista. Assessora empresários e empreendedores em todo o Brasil, com foco em prevenção jurídica e proteção do patrimônio construído.</p>
-        <p>Atendimento direto, sem intermediários. Cada empresa recebe atenção personalizada — não um serviço padronizado.</p>
+        <p>Atendimento direto, sem intermediários. Cada empresa recebe atenção personalizada, não um serviço padronizado.</p>
         <div class="sobre-stat">
           <div class="stat-row">
-            <div class="stat-item">
-              <div class="stat-num">5+</div>
-              <div class="stat-lbl">Anos de atuação</div>
-            </div>
             <div class="stat-item">
               <div class="stat-num">BR</div>
               <div class="stat-lbl">Atendimento nacional</div>
@@ -860,7 +873,7 @@
         </div>
         <div class="hr" style="margin-top:2.5rem;"></div>
         <p style="font-size:.85rem;color:#888;line-height:1.9;font-weight:300;">
-          Escritório fundado com o propósito de oferecer assessoria jurídica empresarial de qualidade para quem está construindo algo — com clareza, proximidade e foco em resultado.
+          Escritório fundado com o propósito de oferecer assessoria jurídica empresarial de qualidade para quem está construindo algo: com clareza, proximidade e foco em resultado.
         </p>
       </div>
     </div>
@@ -916,11 +929,13 @@
     function smoothstep(t) { return t * t * (3 - 2 * t); }
     function lerp(a, b, t) { return a + (b - a) * t; }
 
+    const LOGO_Y_RATIO = 0.30; /* logo começa a 30% da altura do intro */
+
     function initMorph() {
       morphLogo.style.height    = H_START + 'px';
       morphLogo.style.width     = 'auto';
       morphLogo.style.left      = '50%';
-      morphLogo.style.top       = (introSec.offsetHeight / 2) + 'px';
+      morphLogo.style.top       = (introSec.offsetHeight * LOGO_Y_RATIO) + 'px';
       morphLogo.style.transform = 'translate(-50%, -50%)';
     }
 
@@ -942,7 +957,7 @@
       const txCX = r.left + r.width  / 2;
       const txCY = r.top  + r.height / 2;
       const sxCX = window.innerWidth  / 2;
-      const sxCY = introSec.offsetHeight / 2;
+      const sxCY = introSec.offsetHeight * LOGO_Y_RATIO;
 
       const cx = lerp(sxCX, txCX, progress);
       const cy = lerp(sxCY, txCY, progress);
