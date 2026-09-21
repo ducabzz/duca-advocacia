@@ -928,7 +928,7 @@
     const H_START_DESKTOP = 85;
     const H_START_MOBILE  = 44;
     const H_END           = 40;
-    const THRESHOLD       = 0.72;
+    function threshold() { return isMobile() ? 0.47 : 0.72; }
 
     function isMobile() { return window.innerWidth <= 768; }
     let H_START = isMobile() ? H_START_MOBILE : H_START_DESKTOP;
@@ -948,7 +948,7 @@
 
     function updateMorph() {
       const introH   = introSec.offsetHeight;
-      const raw      = Math.min(Math.max(window.scrollY / (introH * THRESHOLD), 0), 1);
+      const raw      = Math.min(Math.max(window.scrollY / (introH * threshold()), 0), 1);
       const progress = smoothstep(raw);
 
       if (raw >= 1) {
